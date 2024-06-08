@@ -94,11 +94,11 @@ const callUser = (id) =>{
 
   //when we can end the call we can disable the feed
   connectionRef.current = peer
-}
+};
 
 
 //add ability to answer call
-const answerCall = () {
+const answerCall = () => {
   setCallAccepted(true)
   const peer = new Peer({
     initiator: false,
@@ -145,7 +145,7 @@ const leaveCall = () =>{
           <div className="video">
           {/* if the call is current then it displays the other users video as stream */}
             {callAccepted && !callEnded ?
-            <video playsInline ref={userVideo} autoPlay style={{width="500px"}}/>:
+            <video playsInline ref={userVideo} autoPlay style={{width: "500px"}}/>:
             null }
           </div>
       </div>
@@ -163,7 +163,7 @@ const leaveCall = () =>{
         />
 
         {/* enable user to copy their own id to send to other users */}
-      <CopyToClipboard text={me} style={{marginBottom = "2rem"}}>
+      <CopyToClipboard text={me} style={{marginBottom: "2rem"}}>
         <Button variant="contained" color="primary" startIcon={<AssignmentIcon fontSize="large"/>}>
           Copy ID
         </Button>

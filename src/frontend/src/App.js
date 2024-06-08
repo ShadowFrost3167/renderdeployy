@@ -9,7 +9,7 @@ import {CopyToClipboard} from "react-copy-to-clipboard";
 //P2P connection
 import Peer from "simple-peer";
 import io from "socket.io-client";
-import "..src/App.css";
+import "./App.css"
 
 
 //create socket
@@ -43,7 +43,8 @@ function App() {
     navigator.mediaDevices.getUserMedia({video: true, audio: true}).then((stream)=>{
       //stream usage
       setStream(stream)
-      myVideo.current.srcObject = stream
+      if (myVideo.current){
+      myVideo.current.srcObject = stream}
     })
 
     socket.on("me", (id)=>{
@@ -94,11 +95,11 @@ const callUser = (id) =>{
 
   //when we can end the call we can disable the feed
   connectionRef.current = peer
-}
+};
 
 
 //add ability to answer call
-const answerCall = () {
+const answerCall = () => {
   setCallAccepted(true)
   const peer = new Peer({
     initiator: false,
@@ -112,8 +113,9 @@ const answerCall = () {
 
   //set other user stream
   peer.on("stream", (stream)=>{
+    if (userVideo.current){
     userVideo.current.srcObject = stream
-  })
+  }})
 
 
   peer.signal(callerSignal)
@@ -145,7 +147,7 @@ const leaveCall = () =>{
           <div className="video">
           {/* if the call is current then it displays the other users video as stream */}
             {callAccepted && !callEnded ?
-            <video playsInline ref={userVideo} autoPlay style={{width="500px"}}/>:
+            <video playsInline ref={userVideo} autoPlay style={{width: "500px"}}/>:
             null }
           </div>
       </div>
@@ -163,7 +165,7 @@ const leaveCall = () =>{
         />
 
         {/* enable user to copy their own id to send to other users */}
-      <CopyToClipboard text={me} style={{marginBottom = "2rem"}}>
+      <CopyToClipboard text={me} style={{marginBottom: "2rem"}}>
         <Button variant="contained" color="primary" startIcon={<AssignmentIcon fontSize="large"/>}>
           Copy ID
         </Button>
