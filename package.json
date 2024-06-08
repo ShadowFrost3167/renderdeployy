@@ -11,22 +11,21 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "express": "^4.19.2",
-    "react-copy-to-clipboard": "^5.1.0",
     "react": "^18.3.1",
-    "simple-peer": "^9.11.1",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
     "serve": "^14.2.3",
+    "simple-peer": "^9.11.1",
     "socket.io-client": "^4.7.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "dev": "nodemon server.js",
- 
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-       "start": "serve -s build"
+    "start": "serve -s build"
   },
   "eslintConfig": {
     "extends": [
