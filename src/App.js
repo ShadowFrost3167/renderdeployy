@@ -13,7 +13,7 @@ import "./App.css";
 
 
 //create socket
-const socket = io.connect("http://localhost:5000")
+const socket = io.connect("https://renderdeployy.onrender.com/")
 
 
 
