@@ -9,7 +9,7 @@ import {CopyToClipboard} from "react-copy-to-clipboard";
 //P2P connection
 import Peer from "simple-peer";
 import io from "socket.io-client";
-
+import "./App.css";
 
 
 //create socket
