@@ -5,7 +5,7 @@ import AssignmentIcon from '@mui/icons-material/Assignment';
 import PhoneIcon from '@mui/icons-material/Phone';
 import React, {useEffect, useRef, useState} from "react";
 //allow user to quick copy string in page.(Below)
-import {CopyToClipboard} from "react-copy-to-clipboard";
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 //P2P connection
 import Peer from "simple-peer";
 import io from "socket.io-client";
